@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Vienry</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <a class="header-logo" href="index.html">Vienry<span>.</span></a>
+
+  <nav>
+    <a class="nav-item" href="index.html">Home</a>
+    <a class="nav-item" href="about.html">About</a>
+    <a class="nav-item" href="certificates.html">Certificates</a>
+    <a class="nav-item" href="experience.html">Experience</a>
+    <a class="nav-item" href="contact.html">Contact</a>
+  </nav>
+
+  <button class="header-btn">Let's Talk</button>
+</header>
+
+<section class="page">
+
+  <h1>Internship <span>Experience</span></h1>
+  <h3>Eastgate Computer Company (HealthyBOS Global)</h3>
+
+  <!-- SLIDESHOW -->
+  <div class="ppt-container">
+
+    <button class="ppt-btn left" onclick="changeSlide(-1)">❮</button>
+
+    <img id="ppt-slide" src="certificates/experience/img1.jpg" class="ppt-image">
+
+    <button class="ppt-btn right" onclick="changeSlide(1)">❯</button>
+
+  </div>
+
+  <p id="ppt-counter">Slide 1 / 28</p>
+
+  <!-- DESCRIPTION -->
+  <div class="experience-info">
+    <h2>Internship Overview</h2>
+    <p>
+      Hands-on experience in software maintenance, hardware troubleshooting,
+      system installation, and technical support operations in a real corporate environment.
+    </p>
+  </div>
+
+</section>
+
+<script>
+let currentSlide = 1;
+const totalSlides = 28;
+
+function updateSlide() {
+  const img = document.getElementById("ppt-slide");
+  const counter = document.getElementById("ppt-counter");
+
+  img.src = `certificates/experience/Slide${currentSlide}.jpeg`;
+  counter.textContent = `Slide ${currentSlide} / ${totalSlides}`;
+}
+
+function changeSlide(step) {
+  currentSlide += step;
+
+  if (currentSlide > totalSlides) currentSlide = 1;
+  if (currentSlide < 1) currentSlide = totalSlides;
+
+  updateSlide();
+}
+</script>
+
+</body>
+</html>

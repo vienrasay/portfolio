@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates | Vienry</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a class="header-logo" href="index.html">Vienry<span>.</span></a>
+  <nav>
+    <a class="nav-item" href="index.html">Home</a>
+    <a class="nav-item" href="about.html">About</a>
+    <a class="nav-item" href="certificates.html">Certificates</a>
+    <a class="nav-item" href="experience.html">Experience</a>
+    <a class="nav-item" href="contact.html">Contact</a>
+  </nav>
+  <button class="header-btn">Let's Talk</button>
+</header>
+
+<section style="padding-top:100px">
+  <section class="page">
+
+  <h1>My Certificates</h1>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" onclick="filterCert('all')">All</button>
+    <button class="filter-btn" onclick="filterCert('webinar')">Webinar</button>
+    <button class="filter-btn" onclick="filterCert('udemy')">Udemy</button>
+    <button class="filter-btn" onclick="filterCert('cisco')">Cisco</button>
+  </div>
+
+  <!-- WEBINARS -->
+  <h2>Webinar Certificates</h2>
+  <div class="cert-grid">
+
+    <img src="certificates/akuni1.png" class="cert-img webinar">
+    <img src="certificates/dict1.png" class="cert-img webinar">
+    <img src="certificates/dict2.png" class="cert-img webinar">
+    <img src="certificates/dict3.png" class="cert-img webinar">
+    <img src="certificates/dict3.png" class="cert-img webinar">
+    <img src="certificates/dict4.png" class="cert-img webinar">
+    <img src="certificates/epcps1.png" class="cert-img webinar">
+    <img src="certificates/icpep1.png" class="cert-img webinar">
+    <img src="certificates/icpep2.png" class="cert-img webinar">
+    <img src="certificates/icpep3.png" class="cert-img webinar">
+    <img src="certificates/th1.png" class="cert-img webinar">
+    <img src="certificates/th2.png" class="cert-img webinar">
+    <img src="certificates/th3.png" class="cert-img webinar">
+
+  </div>
+
+  <!-- UDEMY -->
+  <h2>Udemy Certificates</h2>
+  <div class="cert-grid">
+
+    <img src="certificates/udemy1.png" class="cert-img udemy">
+    <img src="certificates/udemy2.png" class="cert-img udemy">
+  </div>
+
+  <!-- CISCO -->
+  <h2>Cisco Certificates</h2>
+  <div class="cert-grid">
+
+    <img src="certificates/cisco1.png" class="cert-img cisco">
+    <img src="certificates/cisco2.png" class="cert-img cisco">
+    <img src="certificates/cisco3.png" class="cert-img cisco">
+
+  </div>
+
+</section>
+
+<script>
+function filterCert(category) {
+  const images = document.querySelectorAll('.cert-img');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  // button active state
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  images.forEach(img => {
+    if (category === 'all') {
+      img.style.display = 'block';
+    } else {
+      if (img.classList.contains(category)) {
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>
